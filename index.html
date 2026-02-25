@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tết Quê Hương 2026</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- START HEADER -->
+   <nav class="navbar navbar-expand-lg sticky-top shadow">
+    <div class="container">
+        <a class="navbar-brand" href="#top">
+            <i class="fas fa-fire-alt me-2"></i>TẾT 2026
+        </a>
+        <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#trang_chu">Trang Chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gioi_thieu">Giới Thiệu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#phong_tuc">Phong Tục</a></li>            
+                <li class="nav-item"><a class="nav-link" href="#van_hoa">Văn Hóa</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#am_thuc">Ẩm Thực</a></li>
+                <li class="nav-item"><a class="nav-link" href="#hinh_anh">Hình Ảnh</a></li>
+                <li class="nav-item"><a class="nav-link" href="#cau_chuyen">Câu chuyện</a></li>
+                <li class="nav-item"><a class="nav-link" href="#dong_gop">Đóng góp</a></li>
+                <li class="nav-item"><a class="nav-link" href="#lien_he">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END HEADER -->
+<!-- ========================================================================= -->
+    <!-- START BODY -->
+                <!-- ************** -->
+                <!-- START MAIN -->
+
+   <div id="trang_chu" class="container-fluid app-container py-4">
+    <div class="row g-4 justify-content-center">
+        
+        <!-- LỊCH -->
+        <main class="col-12 col-lg-5">
+            <div class="main-content-wrapper p-4 shadow-sm bg-white rounded-4">
+                <div class="content-header mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="fw-bold mb-0 text-danger">Tháng 02</h2>
+                        <p class="text-muted mb-0"><i class="far fa-calendar-check me-2"></i>Lịch Tết Nguyên Đán Bính Ngọ</p>
+                    </div>
+                </div>
+
+                <div class="calendar-card overflow-hidden">
+                    <div class="calendar-thead py-3 text-center fw-bold bg-light">
+                        <div class="row g-0">
+                            <div class="col">CN</div>
+                            <div class="col">T2</div>
+                            <div class="col">T3</div>
+                            <div class="col">T4</div>
+                            <div class="col">T5</div>
+                            <div class="col">T6</div>
+                            <div class="col">T7</div>
+                        </div>
+                    </div>
+                    <div id="calendar-days" class="calendar-grid"></div>
+                </div>
+            </div>
+        </main>
+
+            <!-- CARD  -->
+        <aside class="col-12 col-lg-5">
+            <div class="details-panel-wrapper h-100 p-4 shadow-sm bg-white rounded-4 sticky-lg-top" style="top: 80px;">
+                <div id="welcome-msg" class="empty-state text-center py-5">
+                    <div class="icon-box mb-3 mx-auto">
+                        <i class="fas fa-seedling fa-3x text-success opacity-50"></i>
+                    </div>
+                    <h5 class="fw-bold">Chào Xuân 2026</h5>
+                    <p class="text-muted">Đây là những ngày bình thường như bao ngày @@! Hãy click vào những ngày có đánh sao á!</p>
+                </div>
+                
+                <div id="detail-card" class="event-card" style="display: none;">
+                    <div class="card-img-wrapper mb-3">
+                        <img id="detail-img" src="" alt="Tết" class="img-fluid rounded-3 w-100 shadow-sm">
+                    </div>
+                    <div class="card-content">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-danger px-3 py-2 fs-6" id="detail-date-num"></span>
+                            <span class="text-muted small" id="detail-lunar"><i class="fas fa-moon me-1"></i></span>
+                        </div>
+                        <h4 id="detail-title" class="fw-bold text-danger mb-3"></h4>
+                        <p id="detail-desc" class="text-secondary lh-lg"></p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+</div>
+                <!-- END MAIN -->
+                <!-- ************** -->
+
+                <!-- ************** -->
+                <!-- START GIOI THIEU -->
+<section id="gioi_thieu" class="landscape-section py-5 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-7 mb-4">
+                <div class="scrapbook-intro p-5 stamp-border">
+                    <div class="sticker-flower"><i class="fas fa-fan text-warning"></i></div>
+                    
+                    <h2 class="text-danger fw-bold mb-4">Tết Nguyên Đán: Mỹ Tục Ngàn Năm</h2>
+                    <p class="lh-lg text-dark fw-medium">
+                        Tết Nguyên Đán không chỉ là thời khắc giao hòa giữa đất trời và con người, 
+                        mà còn là sợi dây vô hình kết nối giữa quá khứ và hiện tại. Đây là dịp lễ 
+                        linh thiêng nhất trong văn hóa Việt Nam, nơi những phong tục cổ truyền 
+                        như gói bánh chưng, khai bút đầu xuân hay chúc Tết tổ tiên được gìn giữ 
+                        vẹn nguyên qua bao thế hệ.
+                    </p>
+                    <p class="lh-lg text-secondary">
+                        Vượt lên trên một kỳ nghỉ, Tết là biểu tượng của sự đoàn viên, là lúc 
+                        mọi người tạm gác lại những lo toan để tìm về nguồn cội, để trao nhau 
+                        những phong bao lì xì đỏ thắm và những lời chúc bình an cho một năm mới hanh thông.
+                    </p>
+                    
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+                        <span class="badge rounded-pill bg-danger shadow-sm">#TetNguyenDan</span>
+                        <span class="badge rounded-pill bg-warning text-dark shadow-sm">#VanHoaViet</span>
+                        <span class="badge rounded-pill bg-white text-danger border border-danger shadow-sm">#DoanVien</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 mb-4 position-relative">
+                <div class="landscape-frame">
+                    <div class="sticker-red-packet"><i class="fas fa-envelope-open-text text-danger"></i></div>
+                    
+                 
+                    <div class="caption mt-3">Sắc xuân rạng rỡ trên khắp nẻo quê hương</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+                <!-- END GIOI THIEU -->
+                <!-- ************** -->
+
+
+
+                <!-- ************** -->
+                <!-- START PHONG TUC -->
+<section id="phong_tuc" class="culture-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-danger">Mỹ Tục Ngày Xuân</h2>
+            <p class="text-muted">Những nét đẹp văn hóa truyền thừa qua nhiều thế hệ</p>
+        </div>
+
+        <!-- XÔNG ĐẤT -->
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="culture-card stamp-border">
+                    <div class="card-badge">Mùng 1</div>
+                    <i class="fas fa-home culture-icon text-danger"></i>
+                    <h4 class="fw-bold">Xông Đất</h4>
+                    <p class="small text-secondary">Người đầu tiên bước vào nhà sau giao thừa được tin là sẽ mang lại may mắn, tài lộc cho gia chủ suốt cả năm.</p>
+                </div>
+            </div>
+            <!-- CHÚC TẾT -->
+            <div class="col-md-6 col-lg-4">
+                <div class="culture-card stamp-border">
+                    <div class="card-badge">Mùng 1-2-3</div>
+                    <i class="fas fa-users culture-icon text-warning"></i>
+                    <h4 class="fw-bold">Chúc Tết & Thăm Thân</h4>
+                    <p class="small text-secondary">"Mùng 1 Tết cha, mùng 2 Tết mẹ, mùng 3 Tết thầy". Dịp để bày tỏ lòng hiếu thảo và thắt chặt tình cảm gia đình.</p>
+                </div>
+            </div>
+
+            <!-- MỪNG TUỔI, LÌ XÌ -->
+            <div class="col-md-6 col-lg-4">
+                <div class="culture-card stamp-border">
+                    <div class="card-badge">Cả Tết</div>
+                    <i class="fas fa-envelope-open-text culture-icon text-danger"></i>
+                    <h4 class="fw-bold">Lì Xì Mừng Tuổi</h4>
+                    <p class="small text-secondary">Những phong bao đỏ thắm trao đi kèm lời chúc "Hay ăn chóng lớn" cho trẻ nhỏ và "Bách niên giai lão" cho người già.</p>
+                </div>
+            </div>
+
+            <!-- ĐI CHÙA ĐẦU NĂM -->
+            <div class="col-md-6 col-lg-4">
+                <div class="culture-card stamp-border">
+                    <i class="fas fa-synagogue culture-icon text-success"></i>
+                    <h4 class="fw-bold">Hái Lộc & Đi Chùa</h4>
+                    <p class="small text-secondary">Cầu mong một năm mới bình an, vạn sự như ý và tìm thấy sự thanh thản trong tâm hồn giữa tiết xuân.</p>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-8"> <div class="culture-card stamp-border featured-card">
+        <div class="card-badge bg-dark">Chiều 30 Tết</div>
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <i class="fas fa-utensils culture-icon text-danger" style="font-size: 4rem;"></i>
+            </div>
+
+            <!-- ĂN CƠM ĐOÀN VIÊN -->
+            <div class="col-md-8 text-md-start">
+                <h4 class="fw-bold">Quây Quần Bữa Cơm Đoàn Viên</h4>
+                <p class="text-secondary">
+                    Sau một năm bôn ba, bữa cơm chiều 30 là khoảnh khắc thiêng liêng nhất khi mọi thành viên 
+                    cùng ngồi lại bên mâm cao cỗ đầy. Tiếng cười nói rộn ràng bên bếp lửa hồng không chỉ là 
+                    để thưởng thức ẩm thực, mà là để sẻ chia, thấu hiểu và sưởi ấm tình thân sau những ngày xa cách.
+                </p>
+                <div class="mt-2 text-danger fst-italic small">
+                    <i class="fas fa-heart me-1"></i> "Tết là để trở về, để yêu thương và được yêu thương."
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+                <!-- END PHONG TUC -->
+                <!-- ************** -->
+
+                <!-- ************** -->
+                <!-- START VAN HOA -->
+                 <section id="van_hoa" class="culture-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-danger">Văn Hóa & Sinh Hoạt Ngày Tết</h2>
+            <p class="text-muted">Khám phá không khí lễ hội rộn ràng và các trò chơi dân gian truyền thống</p>
+        </div>
+
+        <div class="row g-4">   
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img src="img/cho_hoa.jpg" class="card-img-top" alt="Trò chơi dân gian">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-danger">Văn hóa "Thưởng hoa" (Đường hoa & Chợ hoa)</h5>
+                        <p class="card-text text-secondary">Nếu miền Bắc có hoa Đào thì Sài Gòn gắn liền với hoa Mai vàng. Người Sài Gòn không chỉ mua hoa về chưng mà việc "đi chơi hoa" đã thành một nét văn hóa.</p>
+                        <ul class="small text-muted ps-3">
+                            <li>Đường hoa Nguyễn Huệ: Đây là biểu tượng Tết của thành phố hơn 20 năm qua. </li>
+                            <li>Người dân diện áo dài, đổ về đây để ngắm linh vật của năm và chụp ảnh kỷ niệm.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img src="img/chua.jpg" class="card-img-top" alt="Lễ hội làng">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-danger">Văn hóa Tâm linh & Hái lộc (Đi Chùa đêm Giao thừa)</h5>
+                        <p class="card-text text-secondary">Người Sài Gòn rất coi trọng việc đi chùa đầu năm để cầu an.</p>
+                        <ul class="small text-muted ps-3">
+                            <li>Viếng chùa: Sau giao thừa, là thói quen của nhiều người ở địa phương em.</li>
+                            <li>Vãn cảnh chùa: Dù là trời đã khuya nhưng khi cúng giao thừa xong mọi người đều ra chùa để cầu bình an.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img src="img/kho_qua&banh_tet.jpg" class="card-img-top" alt="Chợ Tết">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-danger">Văn hóa Ẩm thực: Khổ qua & Bánh Tét</h5>
+                        <p class="card-text text-secondary">Dù có đủ món ngon vật lạ, mâm cơm Tết Sài Gòn khó có thể thiếu:</p>
+                        <ul class="small text-muted ps-3">
+                            <li>Canh Khổ qua: Với quan niệm "mọi cái khổ sẽ qua đi", đây là món ăn không thể thiếu để cầu mong một năm mới suôn sẻ.</li>
+                            <li>Khác với bánh Chưng miền Bắc, người Sài Gòn chuộng bánh Tét (nhân thịt mỡ hoặc nhân chuối).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img src="img/tu_thien.jpg" class="card-img-top" alt="Chợ Tết">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-danger">Văn hóa Sài Gòn là văn hóa sẻ chia.</h5>
+                        <p class="card-text text-secondary">Các hoạt động như xuân tình nguyện, phát cơm từ thiện,... diễn ra sôi nổi</p>
+                        <ul class="small text-muted ps-3">
+                            <li>Phát cơm/quà thiện nguyện: Bạn sẽ dễ dàng bắt gặp các nhóm bạn trẻ hoặc hội nhóm tổ chức phát quà Tết cho người vô gia cư hoặc lao động nghèo xuyên đêm Giao thừa.</li>
+                            <li>Lì xì cho người lao động: Người Sài Gòn thường lì xì rất rộng rãi cho những người giúp việc, bảo vệ, hay người quét rác như một lời cảm ơn chân thành.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- END VAN HOA -->
+                <!-- ************** -->
+
+                <!-- ************** -->
+                <!-- START AM THUC -->
+<section id="am_thuc" class="food-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-danger">Mâm Cỗ Ngày Tết</h2>
+            <p class="text-muted">Những hương vị tinh túy gói trọn hồn Việt</p>
+            <div class="divider mx-auto"></div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="food-stamp-card">
+                    <div class="stamp-img">
+                        <img src="img/banh_chung.jpg" alt="Bánh Chưng">
+                    </div>
+                    <div class="stamp-content">
+                        <h5>Bánh Chưng</h5>
+                        <span class="badge bg-danger">Linh hồn Tết</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="food-stamp-card">
+                    <div class="stamp-img">
+                        <img src="img/thit_kho.jpg" alt="Thịt Kho">
+                    </div>
+                    <div class="stamp-content">
+                        <h5>Thịt Kho Tàu</h5>
+                        <span class="badge bg-warning text-dark">Đậm đà</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="food-stamp-card">
+                    <div class="stamp-img">
+                        <img src="img/dua_hau_tet.jpg" alt="Dưa Hành">
+                    </div>
+                    <div class="stamp-content">
+                        <h5>Dưa Hấu</h5>
+                        <span class="badge bg-success">Ngọt mát</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="food-stamp-card">
+                    <div class="stamp-img">
+                        <img src="img/mut_tet.jpg" alt="Mứt Tết">
+                    </div>
+                    <div class="stamp-content">
+                        <h5>Mứt Tết</h5>
+                        <span class="badge bg-info">Ngọt ngào</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <div class="quote-box p-4 bg-white border-dashed">
+                <p class="mb-0 fst-italic">"Thịt mỡ dưa hành câu đối đỏ - Cây nêu tràng pháo bánh chưng xanh"</p>
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- END AM THUC -->
+                <!-- ************** -->
+                                     
+                <!-- ************** -->
+                <!-- START AlBUM -->
+<section id="hinh_anh" class="album-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-danger">Khoảnh Khắc Ngày Xuân</h2>
+            <p class="text-muted">Càng nhiều ảnh. Các khoảng khắc ngày càng đẹp và vô giá!</p>
+            <p class="text-muted">Nếu có cơ hội hãy chụp ảnh với gia đình, bạn bè nhiều hơn.</p>
+            <p class="text-muted">Vì chỉ có chụp ảnh mới lưu lại giá trị của khoảng khắc đó!</p>
+        </div>
+
+        <div class="photo-masonry">
+            <div class="photo-item">
+                <img src="img/big_family.jpg" alt="Family 1">
+            </div>
+            <div class="photo-item">
+                <img src="img/brother_homie.jpg" alt="Travel 1">
+            </div>
+            <div class="photo-item">
+                <img src="img/family.jpg" alt="Dinner">
+            </div>
+            <div class="photo-item">
+                <img src="img/mam_cung_29.jpg" alt="Family 2">
+            </div>
+            <div class="photo-item">
+                <img src="img/trang_tri_tet.jpg" alt="Spring">
+            </div>
+            <div class="photo-item">
+                <img src="img/chill_1.jpg" alt="Spring">
+            </div>
+            <div class="photo-item">
+                <img src="img/chill_2.jpg" alt="Spring">
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- END ALBUM -->
+                <!-- ************** -->
+
+                <!-- ************** -->
+                <!-- START CAU CHUYEN -->
+<section id="cau_chuyen" class="memory-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-danger">Góc Kỷ Niệm</h2>
+            <p class="text-muted">Nơi lưu giữ những câu chuyện kể qua nhiều thế hệ</p>
+        </div>
+
+        <div class="row g-5"> <div class="col-12">
+                <div class="memory-note note-red">
+                    <div class="pin-icon"><i class="fas fa-thumbtack"></i></div>
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <h4 class="fw-bold">TẬP THỂ GIA ĐÌNH</h4>
+                            <p>"Đây là gia đình bên nội. Gồm nhiều thế hệ sống chung với nhau trong những ngày Tết đoàn viên ấm áp."</p>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <img src="img/big_family.jpg" 
+                                 class="img-fluid rounded shadow-sm border border-3 border-white" 
+                                 alt="Gia đình" 
+                                 style="width: 100%; max-height: 350px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="memory-note note-yellow">
+                    <div class="pin-icon"><i class="fas fa-thumbtack"></i></div>
+                    <div class="row align-items-center flex-row-reverse"> <div class="col-md-4 text-md-end">
+                            <h4 class="fw-bold">ĐI CHÙA CẦU BÌNH AN ĐẦU NĂM</h4>
+                            <p>"Đây nơi mà những người thân trong gia đình cầu phúc để có 1 năm mới bình an, đầy may mắn,..."</p>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <img src="img/chua_1.jpg" 
+                                 class="img-fluid rounded shadow-sm border border-3 border-white" 
+                                 alt="Đi chùa" 
+                                 style="width: 100%; max-height: 350px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="memory-note note-white h-100">
+                    <div class="pin-icon"><i class="fas fa-thumbtack"></i></div>
+                    <h4 class="fw-bold">GIA ĐÌNH QUÂY QUẦN, CHÚC TẾT NHAU</h4>
+                    <p class="fst-italic">"Những câu chúc Tết, những tiếng cười xen lẫn tiếng pháo hoa góp phần làm thêm náo nhiệt Ngày Tết."</p>
+                    <img src="img/gd_quay_quan.jpg" class="img-fluid mt-3 rounded" alt="gd"
+                    style="width: 100%; max-height: 350px; object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="memory-note note-red h-100">
+                    <div class="pin-icon"><i class="fas fa-thumbtack"></i></div>
+                    <h4 class="fw-bold">KHOẢNG KHẮC RIÊNG TƯ CÙNG NHỮNG NGƯỜI BẠN</h4>
+                    <p>"Bạn bè như 1 gia đình thứ 2, nơi mà chúng ta có thể thoải mái tâm sự, vui đùa, cháy hết mình tuổi trẻ"</p>
+                    <img src="img/private_pic.jpg" class="img-fluid mt-3 rounded" alt="ban_be"
+                    style="width: 100%; max-height: 350px; object-fit: cover;">
+                </div>
+            </div>
+             <div class="col-md-6">
+                <div class="memory-note note-red h-100">
+                    <div class="pin-icon"><i class="fas fa-thumbtack"></i></div>
+                    <h4 class="fw-bold">GIA ĐÌNH NHỎ</h4>
+                    <p>"Đây là gia đình nhỏ của em/tôi nơi mà mình có thể dựa vào, tin tưởng tuyệt đối."</p>
+                    <img src="img/family.jpg" class="img-fluid mt-3 rounded" alt="gd_nho"
+                    style="width: 100%; max-height: 350px; object-fit: cover;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+                <!-- END CAU CHUYEN -->
+                <!-- ************** -->
+
+                <!-- ************** -->
+                <!-- START LIEN HE -->
+                 <section id="dong_gop" class="contact-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-danger">Gửi Lời Chúc & Đóng Góp</h2>
+            <div class="divider mx-auto"></div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="contact-card letter-style p-4 shadow">
+                    <h4 class="fw-bold mb-4 text-danger">Hòm Thư Xuân</h4>
+                    <form action="https://formspree.io/f/xjgejqvw" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Tên của bạn:</label>
+                            <input type="text" name="name" class="form-control border-0 border-bottom rounded-0" placeholder="Nguyễn Văn A..." required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email:</label>
+                            <input type="email" name="email" class="form-control border-0 border-bottom rounded-0" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Lời nhắn/Đóng góp:</label>
+                            <textarea name="message" class="form-control border-dashed p-3" rows="4" placeholder="Viết cảm nghĩ của bạn về trang web..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100 fw-bold py-2 shadow-sm">GỬI LỜI CHÚC</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="author-info mb-4">
+                    <h4 class="fw-bold text-danger border-bottom pb-2">Người Thực Hiện</h4>
+                    <p class="mb-1"><strong>Họ tên:</strong> Ngô Trọng Nghĩa</p>
+                    <p class="mb-1"><strong>Lớp:</strong> D22-TH07</p>
+                    <p class="mb-3"><strong>Quê quán:</strong> Tp Hồ Chí Minh</p>
+                </div>
+
+                <div class="map-container shadow-sm border border-3 border-white rounded">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6250674044563!2d106.70116217451712!3d10.76335175943585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f6b79198047%3A0xe869b8fabf380640!2zSG_DoG5nIERp4buHdSwgUXXhuq1uIDQsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1772032009388!5m2!1svi!2s"
+                  width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- END LIEN HE -->
+                <!-- ************** -->
+                 
+    <!-- END BODY -->
+ <!-- ========================================================================= -->
+
+    <!-- START FOOTER -->
+  <footer id="lien_he" class="main-footer py-5 border-top bg-light">
+    <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4 text-center text-md-start">
+    <h5 class="fw-bold text-danger text-uppercase mb-3" style="letter-spacing: 1px;">
+        Tết Nguyên Đán 2026
+    </h5>
+    
+    <div class="author-details mb-3">
+        <p class="small text-muted mb-0">Thiết kế bởi:</p>
+        <p class="fw-bold text-dark mb-0 fs-5">NGÔ TRỌNG NGHĨA</p>
+        <p class="small text-secondary mb-0">MSSV: <span class="fw-medium">DH52201087</span></p>
+    </div>
+
+    <div class="collaboration pt-2 border-top border-light" style="max-width: fit-content;">
+        <p class="small text-muted mb-0" style="font-size: 0.75rem; letter-spacing: 0.5px;">
+             CỘNG SỰ: 
+            <span class="text-uppercase fw-bold" style="background: linear-gradient(45deg, #4285F4, #9B72F3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Gemini</span>
+        </p>
+    </div>
+</div>
+
+            <div class="col-lg-4 text-center">
+                <h5 class="fw-bold text-danger text-uppercase mb-3">Liên hệ trực tiếp</h5>
+                <div class="contact-links">
+                    <p class="mb-2">
+                        <i class="fas fa-phone-alt text-danger me-2"></i>
+                        <a href="tel:0866893570" class="text-decoration-none text-dark fw-medium">0866893570</a>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-comment-dots text-primary me-2"></i>
+                        <a href="https://zalo.me/0866893570" target="_blank" class="text-decoration-none text-dark fw-medium">Zalo: Ngô Trọng Nghĩa</a>
+                    </p>
+                    <p class="mb-0">
+                        <i class="fas fa-envelope text-warning me-2"></i>
+                        <a href="mailto:nghiango2004@gmail.com" class="text-decoration-none text-dark fw-medium">nghiango2004@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 text-center text-md-end">
+                <h5 class="fw-bold text-danger text-uppercase mb-3">Kết nối với mình</h5>
+                <div class="footer-socials mb-3">
+                    <a href="https://www.facebook.com/Shadowknfe" class="btn btn-outline-danger btn-sm rounded-circle mx-1"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nghia_nger/" class="btn btn-outline-danger btn-sm rounded-circle mx-1"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-danger btn-sm rounded-circle mx-1"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="text-muted small fst-italic">"Cung chúc Tân Xuân - Vạn sự như ý"</p>
+            </div>
+        </div>
+
+        <hr class="opacity-10">
+
+        <div class="text-center text-muted small mt-4">
+            &copy; 2026. Tất cả bản quyền thuộc về Ngô Trọng Nghĩa.
+        </div>
+    </div>
+</footer>
+    <!-- END FOOTER -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+
+    <!-- 
+    BUTTON BACK VỀ ĐẦU TRANG 
+    ============================================================================
+    -->
+   
+<button onclick="topFunction()" id="backToTop" title="Lên đầu trang" 
+    style="display:none; position:fixed; bottom:20px; right:30px; z-index:99; border:none; outline:none; background-color:#d32f2f; color:white; cursor:pointer; padding:15px; border-radius:50%; font-size:18px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+// Hiển thị nút khi cuộn xuống 20px
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("backToTop").style.display = "block";
+    } else {
+        document.getElementById("backToTop").style.display = "none";
+    }
+}
+
+// Khi nhấn nút sẽ trượt lên đầu
+function topFunction() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+    <!-- 
+    ============================================================================
+    -->
+</body>
+</html>

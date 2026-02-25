@@ -1,0 +1,581 @@
+html {
+    scroll-behavior: smooth;
+}
+/* =========================================
+   1. BIẾN HỆ THỐNG (VARIABLES)
+   ========================================= */
+:root {
+    --tet-red: #D32F2F;        /* Đỏ đậm truyền thống */
+    --tet-gold: #FFD700;       /* Vàng kim rực rỡ */
+    --light-bg: #f8f9fa;       /* Nền xám nhạt hiện đại */
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Cài đặt chung */
+body {
+    background-color: var(--light-bg);
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================================
+   2. HEADER (NAVBAR)
+   ========================================= */
+.navbar {
+    background-color: var(--tet-red) !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+    padding: 10px 0;
+    position: sticky; /* Giữ menu ở đỉnh trang */
+    top: 0;
+    z-index: 1050;    /* Đảm bảo luôn nằm trên các ô lịch */
+}
+
+.navbar-brand {
+    color: var(--tet-gold) !important;
+    font-weight: 800;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--tet-gold) !important;
+}
+
+/* =========================================
+   3. BODY & LAYOUT CHÍNH
+   ========================================= */
+.app-container {
+    padding-top: 30px;
+    min-height: 80vh;
+}
+
+/* Wrapper bọc ngoài cho Lịch và Panel chi tiết */
+.main-content-wrapper, 
+.details-panel-wrapper {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+/* =========================================
+   4. CALENDAR (LỊCH TƯƠNG TÁC)
+   ========================================= */
+   /* Style cho ngôi sao trên ô lịch */
+.day-btn .star-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.7rem;
+    color: #FFD700; /* Màu vàng kim */
+    filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.5));
+}
+
+/* Ngôi sao đặc biệt cho đêm Giao Thừa */
+.day-btn .special-star {
+    font-size: 0.9rem;
+    color: #FF4500; /* Màu cam đỏ rực rỡ */
+    animation: starPulse 1.5s infinite;
+}
+
+/* Hiệu ứng lấp lánh cho ngôi sao */
+@keyframes starPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Đảm bảo số ngày không bị đè bởi ngôi sao */
+.day-num {
+    z-index: 1;
+}
+.calendar-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+/* Hàng tiêu đề Thứ (CN, T2...) */
+.calendar-thead {
+    background: #fdfdfd;
+    border-bottom: 2px solid #f1f1f1;
+    color: #6c757d;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Lưới lịch */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    background-color: #eee; /* Màu đường kẻ giữa các ô */
+    gap: 1px; 
+}
+
+/* Nút bấm ngày */
+.day-btn {
+    aspect-ratio: 1 / 1; 
+    background: var(--white);
+    border: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+/* Hover ngày */
+.day-btn:hover {
+    background: #fff5f5;
+    color: var(--tet-red);
+    z-index: 2;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Ngày đang được chọn (Active) */
+.day-btn.active {
+    background: var(--tet-red) !important;
+    color: var(--white) !important;
+    font-weight: bold;
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+.day-num {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.lunar-tag {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+/* =========================================
+   5. CHI TIẾT SỰ KIỆN (EVENT CARD)
+   ========================================= */
+.event-card {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.card-img-wrapper img {
+  object-fit: cover; /* Giữ ảnh không bị méo khi co giãn */
+    height: 300px;     /* <--- THAY ĐỔI CHIỀU CAO Ở ĐÂY (Ví dụ: 300px, 400px...) */
+    width: 100%;       /* Đảm bảo ảnh luôn tràn hết chiều ngang của tấm card */
+    transition: transform 0.5s ease;
+}
+
+.card-img-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   6. FOOTER (CHÂN TRANG)
+   ========================================= */
+.main-footer {
+    background-color: #fdfdfd;
+}
+
+.contact-links a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.contact-links a:hover {
+    color: #d32f2f !important; /* Đổi màu đỏ khi hover */
+    transform: translateX(5px); /* Nhích nhẹ sang phải */
+}
+
+.footer-socials .btn:hover {
+    background-color: #d32f2f;
+    color: #fff;
+}
+
+/* Tạo độ thoáng cho các cột trên mobile */
+@media (max-width: 991px) {
+    .main-footer .col-lg-4 {
+        border-bottom: 1px dashed #eee;
+        padding-bottom: 20px;
+    }
+    .main-footer .col-lg-4:last-child {
+        border-bottom: none;
+    }
+}
+/* Hiệu ứng cho text Gemini */
+.collaboration span {
+    display: inline-block;
+    font-weight: 800;
+    background: linear-gradient(45deg, #4285F4, #9B72F3);
+    background-clip: text; /* Thêm dòng này lên đầu */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Tùy chỉnh khoảng cách cho mobile */
+@media (max-width: 768px) {
+    .collaboration {
+        margin: 0 auto; /* Canh giữa phần gạch chân trên mobile */
+    }
+}
+
+/* =========================================
+   7. RESPONSIVE (ĐIỀU CHỈNH THIẾT BỊ)
+   ========================================= */
+
+/* Mobile & Tablet nhỏ */
+@media (max-width: 991.98px) {
+    .app-container {
+        padding: 10px 5px;
+    }
+    
+    .main-content-wrapper, .details-panel-wrapper {
+        padding: 15px !important;
+        border-radius: 15px !important;
+    }
+
+    .day-btn { padding: 2px; }
+    .day-num { font-size: 1rem; }
+    .lunar-tag { font-size: 0.6rem; }
+    
+    aside { margin-top: 15px; }
+    h2 { font-size: 1.4rem; }
+}
+
+/* Mobile nhỏ (Footer fix) */
+@media (max-width: 767.98px) {
+    .main-footer {
+        padding-bottom: 80px; 
+    }
+}
+
+/* PC lớn (Sticky Sidebar) */
+@media (min-width: 992px) {
+    .sticky-lg-top {
+        position: sticky;
+        top: 90px; 
+        z-index: 10;
+    }
+}
+
+/* =========================================
+   8. GIỚI THIỆU SECTION
+   ========================================= */
+
+/* Section Landscape */
+.landscape-section {
+    background-image: radial-gradient(#d32f2f 0.5px, transparent 0.5px); /* Chấm bi nhẹ cho nền đỏ */
+    background-size: 20px 20px;
+    background-color: #fdf2f2; /* Màu nền đỏ cực nhẹ để dịu mắt */
+}
+
+/* Khung ảnh Polaroid */
+.landscape-frame {
+    background: white;
+    padding: 15px 15px 45px 15px; /* Chừa lề dưới rộng để ghi chú */
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.2);
+    transform: rotate(3deg); /* Nghiêng nhẹ như ảnh dán */
+    transition: var(--transition);
+}
+
+.landscape-frame:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.landscape-frame .caption {
+    font-family: 'Dancing Script', cursive; /* Dùng font viết tay nếu có */
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.scrapbook-intro {
+    position: relative;
+    background: white;
+    border: 2px dashed #d32f2f; /* Giữ viền đứt nét cho đúng chất scrapbook */
+    border-radius: 2px;
+    box-shadow: 5px 5px 0px #ffd700;
+    z-index: 1;
+    padding: 20px; /* Thêm padding nếu chưa có trong HTML */
+}
+
+/* Sticker Hoa Mai xoay nhẹ ở góc */
+.sticker-flower {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 2rem;
+    animation: rotateSlow 10s linear infinite;
+    z-index: 2;
+}
+
+/* Sticker bao lì xì dán ở góc ảnh */
+.sticker-red-packet {
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    transform: rotate(-15deg);
+    z-index: 10;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Chữ ký phong cách viết tay cho Caption */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+.landscape-frame .caption {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: #d32f2f;
+}
+
+/* Điều chỉnh lại viền để không bị lỗi sao như trước */
+.stamp-border {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-left: 5px solid #d32f2f; /* Thêm điểm nhấn dải màu bên trái */
+}
+
+/* =========================================
+   9. SECTION ẨM THỰC
+   ========================================= */
+/* Section Ẩm Thực */
+.food-section {
+    background-color: #fffaf0; /* Màu nền giấy cũ nhẹ nhàng */
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.divider {
+    height: 3px;
+    width: 60px;
+    background: #d32f2f;
+    margin-top: 10px;
+}
+
+/* Hiệu ứng con tem cho món ăn */
+.food-stamp-card {
+    background: white;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    /* Đục lỗ giả ở 4 góc */
+    border-radius: 5px;
+}
+
+.food-stamp-card::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border: 2px dashed #eee; /* Đường đứt nét quanh con tem */
+    pointer-events: none;
+}
+
+.stamp-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.stamp-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(20%); /* Làm ảnh hơi cũ một chút cho đúng chất scrapbook */
+}
+
+.food-stamp-card h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Hiệu ứng tương tác */
+.food-stamp-card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Quote Box */
+.border-dashed {
+    border: 2px dashed #d32f2f;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.quote-box p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #d32f2f;
+}
+
+/* =========================================
+   10. SECTION VĂN HÓA
+   ========================================= */
+/* Section Văn Hóa */
+.culture-section {
+    background-color: #fdf2f2;
+    padding-bottom: 80px;
+}
+
+.culture-card {
+    background: #fff;
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    height: 100%;
+    box-shadow: 5px 5px 0px rgba(211, 47, 47, 0.1);
+}
+
+.culture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--tet-red);
+}
+
+/* Badge số mùng ghi chú góc card */
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--tet-red);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.culture-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.culture-card h4 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.culture-card p {
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   11. SECTION ALBUM
+   ========================================= */
+/* Container chính của Masonry */
+.photo-masonry {
+    column-count: 3; /* Chia làm 3 cột trên PC */
+    column-gap: 20px; /* Khoảng cách giữa các cột */
+    width: 100%;
+}
+
+/* Từng ô ảnh */
+.photo-item {
+    display: inline-block; /* Quan trọng để ảnh không bị cắt đôi giữa 2 cột */
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto; /* Để ảnh giữ nguyên tỉ lệ gốc, tạo ra sự cao thấp khác nhau */
+    border-radius: 4px;
+    display: block;
+}
+
+/* Hiệu ứng hover cho giống Scrapbook */
+.photo-item:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 10px 20px rgba(211, 47, 47, 0.2);
+    z-index: 10;
+}
+
+/* Responsive: Tự động chỉnh cột theo màn hình */
+@media (max-width: 992px) {
+    .photo-masonry {
+        column-count: 2; /* Tablet còn 2 cột */
+    }
+}
+
+@media (max-width: 576px) {
+    .photo-masonry {
+        column-count: 1; /* Mobile còn 1 cột */
+    }
+}
+
+
+/* =========================================
+   12. SECTION LIÊN HỆ
+   ========================================= */
+/* Liên hệ Style */
+.letter-style {
+    background-color: #fff;
+    background-image: repeating-linear-gradient(#fff, #fff 31px, #e5e5e5 31px, #e5e5e5 32px); /* Tạo dòng kẻ ngang như giấy tập */
+    line-height: 32px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.letter-style .form-control {
+    background: transparent; /* Để lộ dòng kẻ giấy */
+}
+
+.map-container {
+    overflow: hidden;
+    line-height: 0;
+}
+
+.border-dashed {
+    border: 2px dashed #d32f2f !important;
+}
+
+
+
+
